@@ -1,0 +1,16 @@
+name: Issue Workflow
+
+on:
+  issues:
+    types: [opened, edited, closed, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    # 以下に実行したいジョブのステップを追加します
+    - name: Run a script
+      run: echo "Issue action detected!"
